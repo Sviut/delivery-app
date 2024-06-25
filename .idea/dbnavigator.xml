@@ -32,6 +32,8 @@
     <connection id="52feef15-849a-4512-afeb-5462bc503ec1" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="52feef15-849a-4512-afeb-5462bc503ec1" dataset="public.order" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="52feef15-849a-4512-afeb-5462bc503ec1" dataset="public.category" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="52feef15-849a-4512-afeb-5462bc503ec1" dataset="public.user" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="52feef15-849a-4512-afeb-5462bc503ec1" dataset="public.User" active-filter-id="EMPTY_FILTER">
       <filter id="ec5bfcd6-4291-4ef2-8124-8b935dfcbc6c" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
