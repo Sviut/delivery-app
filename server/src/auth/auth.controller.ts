@@ -10,6 +10,7 @@ import {
 import { AuthService } from './auth.service'
 import { AuthDto } from './dto/auth.dto'
 import { RefreshTokenDto } from './dto/refresh-token.dto'
+import { Auth } from './auth/decorators/auth.decorator'
 
 @Controller('auth')
 export class AuthController {
@@ -31,6 +32,7 @@ export class AuthController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(HttpStatus.OK)
+	@Auth()
 	@Post('login/access-token')
 	async getNewTokens(@Body() tokenDto: RefreshTokenDto) {
 		return this.authService.getNewTokens(tokenDto.refreshToken)
