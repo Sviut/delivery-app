@@ -13,6 +13,7 @@ import {
 import { CategoryService } from './category.service'
 import { Category } from '@prisma/client'
 import { CategoryDto } from './dto/category.dto'
+import { Auth } from '../auth/auth/decorators/auth.decorator'
 
 @Controller('categories')
 export class CategoryController {
@@ -34,6 +35,7 @@ export class CategoryController {
 	}
 
 	@HttpCode(HttpStatus.OK)
+	@Auth()
 	@Post()
 	async create() {
 		return this.categoryService.create()
@@ -41,12 +43,14 @@ export class CategoryController {
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(HttpStatus.OK)
+	@Auth()
 	@Put(':id')
 	async update(@Param('id') id: string, @Body() dto: CategoryDto) {
 		return this.categoryService.update(id, dto)
 	}
 
 	@HttpCode(HttpStatus.OK)
+	@Auth()
 	@Post()
 	async delete(@Param('id') id: string) {
 		return this.categoryService.delete(id)
